@@ -239,10 +239,14 @@ ul {
 
 .header-inner {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: clamp(0.8rem, 2vw, 1.6rem);
   min-height: 84px;
+}
+
+.site-nav {
+  min-width: 0;
 }
 
 .site-title {
@@ -262,7 +266,7 @@ ul {
 .site-nav .menu {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.4rem;
 }
 
@@ -370,6 +374,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  justify-self: end;
 }
 
 .header-cta-wrap .mantix-language-switcher {
@@ -1245,7 +1250,7 @@ ul {
   transform: translateY(0);
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 1320px) {
   .hero-grid,
   .showcase-row,
   .showcase-right,
@@ -1283,6 +1288,7 @@ ul {
 
   .site-nav .menu {
     justify-content: flex-start;
+    flex-wrap: wrap;
     padding-bottom: 0.45rem;
   }
 
