@@ -1,0 +1,113 @@
+.mantix-language-switcher {
+  position: relative;
+  z-index: 50;
+}
+
+.mantix-top-bar {
+  position: relative;
+  z-index: 210;
+  background: #f7f9ff;
+  border-bottom: 1px solid rgba(27, 42, 115, 0.1);
+}
+
+.mantix-top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 44px;
+  padding: 0.35rem 0;
+}
+
+.mantix-lang-dropdown {
+  position: relative;
+}
+
+.mantix-lang-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid rgba(27, 42, 115, 0.22);
+  border-radius: 11px;
+  background: #fff;
+  color: #1b2a73;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.68rem 0.78rem;
+  white-space: nowrap;
+}
+
+.mantix-lang-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.mantix-lang-dropdown summary::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-1px);
+  margin-left: 0.2rem;
+}
+
+.mantix-lang-dropdown[open] summary::after {
+  transform: rotate(-135deg) translateY(-1px);
+}
+
+.mantix-lang-code {
+  display: inline-block;
+  min-width: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.mantix-lang-options {
+  margin: 0;
+  padding: 0.45rem 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.55rem);
+  min-width: 270px;
+  max-height: 65vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #d6ddef;
+  border-radius: 14px;
+  box-shadow: 0 24px 45px rgba(12, 23, 58, 0.22);
+}
+
+.mantix-lang-options a {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  gap: 0.7rem;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.68rem 0.84rem;
+  color: #131f45;
+  font-size: 0.95rem;
+  transition: background-color 0.18s ease, color 0.18s ease;
+}
+
+.mantix-lang-options a:hover,
+.mantix-lang-options a:focus-visible {
+  background: #f3f7ff;
+  color: #0d4dd3;
+  outline: none;
+}
+
+.mantix-lang-options a[aria-current="true"] {
+  background: #eef4ff;
+  color: #0f4cb7;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .mantix-lang-options {
+    right: 0;
+    max-width: min(90vw, 320px);
+  }
+}

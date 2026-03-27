@@ -1,0 +1,18 @@
+:root {
+  --mantix-primary: #1b2a73;
+  --mantix-accent: #0db4d6;
+  --mantix-accent-alt: #5b5de6;
+  --mantix-surface: #f4f7ff;
+}
+.editor-styles-wrapper {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1a2238;
+}
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+  font-family: Manrope, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
