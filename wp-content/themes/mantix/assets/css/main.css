@@ -54,6 +54,7 @@ body {
     linear-gradient(180deg, #f5f8ff 0%, #ffffff 320px);
   text-rendering: optimizeLegibility;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {
@@ -272,6 +273,7 @@ ul {
 
 .site-nav .menu-item a {
   display: inline-block;
+  white-space: nowrap;
   text-decoration: none;
   color: var(--mantix-muted);
   font-weight: 600;
@@ -1297,6 +1299,18 @@ ul {
   }
 }
 
+@media (max-width: 1024px) {
+  .header-cta-wrap .button-secondary {
+    display: none;
+  }
+
+  .header-cta-wrap .mantix-lang-dropdown summary {
+    min-height: 42px;
+    padding: 0.66rem 0.72rem;
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 768px) {
   .section {
     padding: clamp(3.4rem, 8vw, 4.5rem) 0;
@@ -1313,15 +1327,36 @@ ul {
   .header-inner {
     grid-template-columns: auto auto auto;
     min-height: 76px;
+    gap: 0.55rem;
   }
 
   .header-cta-wrap {
+    display: flex;
+    justify-self: end;
+  }
+
+  .header-cta-wrap .button {
     display: none;
+  }
+
+  .header-cta-wrap .mantix-lang-dropdown summary {
+    min-height: 40px;
+    padding: 0.56rem 0.62rem;
+    font-size: 0.8rem;
+  }
+
+  .header-cta-wrap .mantix-lang-name {
+    display: none;
+  }
+
+  .header-cta-wrap .mantix-lang-code {
+    min-width: 1.35rem;
+    letter-spacing: 0.04em;
   }
 
   .menu-toggle {
     display: inline-block;
-    margin-left: auto;
+    margin-left: 0;
   }
 
   .site-nav {
@@ -1392,6 +1427,14 @@ ul {
   .announcement-inner {
     min-height: 48px;
     padding: 0.45rem 0;
+  }
+
+  .site-title {
+    font-size: 1.32rem;
+  }
+
+  .header-cta-wrap .mantix-lang-dropdown summary {
+    padding: 0.54rem 0.56rem;
   }
 
   .hero-badges li {
