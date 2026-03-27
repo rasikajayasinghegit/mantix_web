@@ -238,11 +238,25 @@ ul {
 }
 
 .announcement-language .mantix-lang-dropdown summary {
-  min-height: 36px;
-  padding: 0.5rem 0.62rem;
-  border-radius: 10px;
+  min-height: 30px;
+  padding: 0.34rem 0.5rem;
+  gap: 0.36rem;
+  border-radius: 9px;
   border-color: rgba(255, 255, 255, 0.36);
   color: #16327f;
+  font-size: 0.74rem;
+}
+
+.announcement-language .mantix-lang-code {
+  min-width: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+.announcement-language .mantix-lang-name {
+  max-width: 82px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .site-header {
@@ -1367,9 +1381,9 @@ ul {
   }
 
   .announcement-language .mantix-lang-dropdown summary {
-    min-height: 34px;
-    padding: 0.46rem 0.56rem;
-    font-size: 0.78rem;
+    min-height: 30px;
+    padding: 0.34rem 0.46rem;
+    font-size: 0.72rem;
   }
 
   .announcement-language .mantix-lang-name {
