@@ -9,13 +9,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$benefits = mantix_get_json_mod( 'mantix_benefits_json' );
+$benefits = mantix_get_benefit_items();
+$eyebrow  = (string) mantix_get_mod( 'mantix_benefits_eyebrow' );
+$title    = (string) mantix_get_mod( 'mantix_benefits_title' );
 ?>
 <section class="section section-gradient" aria-labelledby="benefits-title">
 	<div class="site-container">
 		<div class="section-heading" data-animate="fade-up">
-			<p class="section-eyebrow"><?php esc_html_e( 'Why Mantix', 'mantix' ); ?></p>
-			<h2 id="benefits-title"><?php esc_html_e( 'Business outcomes your leadership team can measure', 'mantix' ); ?></h2>
+			<p class="section-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+			<h2 id="benefits-title"><?php echo esc_html( $title ); ?></h2>
 		</div>
 		<div class="benefits-grid">
 			<?php foreach ( $benefits as $benefit ) : ?>

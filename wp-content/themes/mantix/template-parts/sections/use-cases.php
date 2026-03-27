@@ -9,13 +9,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$cases = mantix_get_json_mod( 'mantix_use_cases_json' );
+$cases   = mantix_get_use_case_items();
+$eyebrow = (string) mantix_get_mod( 'mantix_use_cases_eyebrow' );
+$title   = (string) mantix_get_mod( 'mantix_use_cases_title' );
 ?>
 <section id="use-cases" class="section section-soft" aria-labelledby="use-cases-title">
 	<div class="site-container">
 		<div class="section-heading" data-animate="fade-up">
-			<p class="section-eyebrow"><?php esc_html_e( 'Use Cases', 'mantix' ); ?></p>
-			<h2 id="use-cases-title"><?php esc_html_e( 'Built for teams of every size and complexity', 'mantix' ); ?></h2>
+			<p class="section-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+			<h2 id="use-cases-title"><?php echo esc_html( $title ); ?></h2>
 		</div>
 		<div class="use-case-grid">
 			<?php foreach ( $cases as $case ) : ?>

@@ -10,13 +10,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $features = mantix_get_feature_items();
+$eyebrow  = (string) mantix_get_mod( 'mantix_features_eyebrow' );
+$title    = (string) mantix_get_mod( 'mantix_features_title' );
+$text     = (string) mantix_get_mod( 'mantix_features_text' );
 ?>
 <section id="features" class="section section-soft" aria-labelledby="features-title">
 	<div class="site-container">
 		<div class="section-heading" data-animate="fade-up">
-			<p class="section-eyebrow"><?php esc_html_e( 'Platform Features', 'mantix' ); ?></p>
-			<h2 id="features-title"><?php esc_html_e( 'Everything your team needs to execute with confidence', 'mantix' ); ?></h2>
-			<p><?php esc_html_e( 'Mantix combines workflow control, collaboration, reporting, and security into one modern operating platform.', 'mantix' ); ?></p>
+			<p class="section-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+			<h2 id="features-title"><?php echo esc_html( $title ); ?></h2>
+			<p><?php echo esc_html( $text ); ?></p>
 		</div>
 
 		<div class="features-grid">

@@ -17,6 +17,14 @@ $primary_url     = (string) mantix_get_mod( 'mantix_hero_primary_url' );
 $secondary_label = (string) mantix_get_mod( 'mantix_hero_secondary_label' );
 $secondary_url   = (string) mantix_get_mod( 'mantix_hero_secondary_url' );
 $badges          = mantix_get_lines_mod( 'mantix_hero_badges' );
+$badges_aria     = (string) mantix_get_mod( 'mantix_hero_badges_aria_label' );
+$mockup_aria     = (string) mantix_get_mod( 'mantix_hero_mockup_aria_label' );
+$mockup_one_label = (string) mantix_get_mod( 'mantix_hero_mockup_one_label' );
+$mockup_one_value = (string) mantix_get_mod( 'mantix_hero_mockup_one_value' );
+$mockup_two_label = (string) mantix_get_mod( 'mantix_hero_mockup_two_label' );
+$mockup_two_value = (string) mantix_get_mod( 'mantix_hero_mockup_two_value' );
+$mockup_three_label = (string) mantix_get_mod( 'mantix_hero_mockup_three_label' );
+$mockup_three_value = (string) mantix_get_mod( 'mantix_hero_mockup_three_value' );
 ?>
 <section class="section hero-section" aria-labelledby="mantix-hero-title">
 	<div class="site-container hero-grid">
@@ -29,7 +37,7 @@ $badges          = mantix_get_lines_mod( 'mantix_hero_badges' );
 				<a class="button button-ghost" href="<?php echo esc_url( $secondary_url ); ?>"><?php echo esc_html( $secondary_label ); ?></a>
 			</div>
 			<?php if ( ! empty( $badges ) ) : ?>
-				<ul class="hero-badges" aria-label="<?php esc_attr_e( 'Trust highlights', 'mantix' ); ?>">
+				<ul class="hero-badges" aria-label="<?php echo esc_attr( $badges_aria ); ?>">
 					<?php foreach ( $badges as $badge ) : ?>
 						<li><?php echo esc_html( $badge ); ?></li>
 					<?php endforeach; ?>
@@ -38,7 +46,7 @@ $badges          = mantix_get_lines_mod( 'mantix_hero_badges' );
 		</div>
 
 		<div class="hero-visual" data-animate="fade-up">
-			<div class="mockup-shell" role="img" aria-label="<?php esc_attr_e( 'Mantix dashboard preview', 'mantix' ); ?>">
+			<div class="mockup-shell" role="img" aria-label="<?php echo esc_attr( $mockup_aria ); ?>">
 				<div class="mockup-topbar">
 					<span></span><span></span><span></span>
 				</div>
@@ -51,16 +59,16 @@ $badges          = mantix_get_lines_mod( 'mantix_hero_badges' );
 					</div>
 					<div class="mockup-panels">
 						<div class="mockup-card mockup-card-kpi">
-							<p><?php esc_html_e( 'Workflow Completion', 'mantix' ); ?></p>
-							<strong>86%</strong>
+							<p><?php echo esc_html( $mockup_one_label ); ?></p>
+							<strong><?php echo esc_html( $mockup_one_value ); ?></strong>
 						</div>
 						<div class="mockup-card">
-							<p><?php esc_html_e( 'Pending Approvals', 'mantix' ); ?></p>
-							<strong>14</strong>
+							<p><?php echo esc_html( $mockup_two_label ); ?></p>
+							<strong><?php echo esc_html( $mockup_two_value ); ?></strong>
 						</div>
 						<div class="mockup-card">
-							<p><?php esc_html_e( 'Team Capacity', 'mantix' ); ?></p>
-							<strong>Balanced</strong>
+							<p><?php echo esc_html( $mockup_three_label ); ?></p>
+							<strong><?php echo esc_html( $mockup_three_value ); ?></strong>
 						</div>
 						<div class="mockup-chart" aria-hidden="true">
 							<span style="height:46%"></span>

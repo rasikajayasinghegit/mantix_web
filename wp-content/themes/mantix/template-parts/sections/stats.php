@@ -9,13 +9,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$stats = mantix_get_json_mod( 'mantix_stats_json' );
+$stats   = mantix_get_stat_items();
+$eyebrow = (string) mantix_get_mod( 'mantix_stats_eyebrow' );
+$title   = (string) mantix_get_mod( 'mantix_stats_title' );
 ?>
 <section class="section stats-section" aria-labelledby="impact-title">
 	<div class="site-container">
 		<div class="section-heading" data-animate="fade-up">
-			<p class="section-eyebrow"><?php esc_html_e( 'Impact', 'mantix' ); ?></p>
-			<h2 id="impact-title"><?php esc_html_e( 'Measured improvements after adopting Mantix', 'mantix' ); ?></h2>
+			<p class="section-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+			<h2 id="impact-title"><?php echo esc_html( $title ); ?></h2>
 		</div>
 		<div class="stats-grid">
 			<?php foreach ( $stats as $stat ) : ?>

@@ -9,13 +9,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$showcase_items = mantix_get_json_mod( 'mantix_showcase_json' );
+$showcase_items = mantix_get_showcase_items();
+$eyebrow        = (string) mantix_get_mod( 'mantix_showcase_eyebrow' );
+$title          = (string) mantix_get_mod( 'mantix_showcase_title' );
 ?>
 <section id="solutions" class="section" aria-labelledby="showcase-title">
 	<div class="site-container">
 		<div class="section-heading" data-animate="fade-up">
-			<p class="section-eyebrow"><?php esc_html_e( 'Platform Overview', 'mantix' ); ?></p>
-			<h2 id="showcase-title"><?php esc_html_e( 'A complete operating layer for modern businesses', 'mantix' ); ?></h2>
+			<p class="section-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+			<h2 id="showcase-title"><?php echo esc_html( $title ); ?></h2>
 		</div>
 
 		<div class="showcase-list">

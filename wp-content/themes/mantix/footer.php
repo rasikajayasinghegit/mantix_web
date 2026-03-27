@@ -11,7 +11,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $summary    = (string) mantix_get_mod( 'mantix_footer_summary' );
 $copyright  = (string) mantix_get_mod( 'mantix_footer_copyright' );
-$social_set = mantix_get_json_mod( 'mantix_social_json' );
+$social_set = mantix_get_social_items();
+$quick_links_title = (string) mantix_get_mod( 'mantix_footer_quick_links_title' );
+$legal_title       = (string) mantix_get_mod( 'mantix_footer_legal_title' );
+$social_title      = (string) mantix_get_mod( 'mantix_footer_social_title' );
+$privacy_label     = (string) mantix_get_mod( 'mantix_footer_legal_privacy_label' );
+$privacy_url       = (string) mantix_get_mod( 'mantix_footer_legal_privacy_url' );
+$terms_label       = (string) mantix_get_mod( 'mantix_footer_legal_terms_label' );
+$terms_url         = (string) mantix_get_mod( 'mantix_footer_legal_terms_url' );
+$cookie_label      = (string) mantix_get_mod( 'mantix_footer_legal_cookie_label' );
+$cookie_url        = (string) mantix_get_mod( 'mantix_footer_legal_cookie_url' );
 $year       = gmdate( 'Y' );
 ?>
 <footer class="site-footer">
@@ -22,7 +31,7 @@ $year       = gmdate( 'Y' );
 		</div>
 
 		<div class="footer-links-wrap">
-			<h3><?php esc_html_e( 'Quick Links', 'mantix' ); ?></h3>
+			<h3><?php echo esc_html( $quick_links_title ); ?></h3>
 			<nav aria-label="<?php esc_attr_e( 'Footer links', 'mantix' ); ?>">
 				<?php
 				wp_nav_menu(
@@ -37,16 +46,16 @@ $year       = gmdate( 'Y' );
 		</div>
 
 		<div class="footer-links-wrap">
-			<h3><?php esc_html_e( 'Legal', 'mantix' ); ?></h3>
+			<h3><?php echo esc_html( $legal_title ); ?></h3>
 			<ul>
-				<li><a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy Policy', 'mantix' ); ?></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/terms-and-conditions/' ) ); ?>"><?php esc_html_e( 'Terms of Service', 'mantix' ); ?></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/cookie-policy/' ) ); ?>"><?php esc_html_e( 'Cookie Policy', 'mantix' ); ?></a></li>
+				<li><a href="<?php echo esc_url( $privacy_url ); ?>"><?php echo esc_html( $privacy_label ); ?></a></li>
+				<li><a href="<?php echo esc_url( $terms_url ); ?>"><?php echo esc_html( $terms_label ); ?></a></li>
+				<li><a href="<?php echo esc_url( $cookie_url ); ?>"><?php echo esc_html( $cookie_label ); ?></a></li>
 			</ul>
 		</div>
 
 		<div class="footer-links-wrap">
-			<h3><?php esc_html_e( 'Social', 'mantix' ); ?></h3>
+			<h3><?php echo esc_html( $social_title ); ?></h3>
 			<ul>
 				<?php foreach ( $social_set as $item ) : ?>
 					<?php

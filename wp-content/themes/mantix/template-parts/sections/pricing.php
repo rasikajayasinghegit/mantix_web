@@ -10,12 +10,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $plans = mantix_get_pricing_items();
+$eyebrow       = (string) mantix_get_mod( 'mantix_pricing_eyebrow' );
+$title         = (string) mantix_get_mod( 'mantix_pricing_title' );
+$popular_label = (string) mantix_get_mod( 'mantix_pricing_popular_label' );
 ?>
 <section id="pricing" class="section section-soft" aria-labelledby="pricing-title">
 	<div class="site-container">
 		<div class="section-heading" data-animate="fade-up">
-			<p class="section-eyebrow"><?php esc_html_e( 'Pricing', 'mantix' ); ?></p>
-			<h2 id="pricing-title"><?php esc_html_e( 'Choose a plan that matches your growth stage', 'mantix' ); ?></h2>
+			<p class="section-eyebrow"><?php echo esc_html( $eyebrow ); ?></p>
+			<h2 id="pricing-title"><?php echo esc_html( $title ); ?></h2>
 		</div>
 		<div class="pricing-grid">
 			<?php foreach ( $plans as $plan ) : ?>
@@ -31,7 +34,7 @@ $plans = mantix_get_pricing_items();
 				?>
 				<article class="pricing-card <?php echo $popular ? 'is-popular' : ''; ?>" data-animate="fade-up">
 					<?php if ( $popular ) : ?>
-						<p class="popular-badge"><?php esc_html_e( 'Most Popular', 'mantix' ); ?></p>
+						<p class="popular-badge"><?php echo esc_html( $popular_label ); ?></p>
 					<?php endif; ?>
 					<h3><?php echo esc_html( $name ); ?></h3>
 					<p class="price-line"><span><?php echo esc_html( $price ); ?></span><?php echo esc_html( $period ); ?></p>
