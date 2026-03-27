@@ -342,18 +342,114 @@ function mantix_save_content_meta( $post_id ) {
 add_action( 'save_post', 'mantix_save_content_meta' );
 
 /**
- * Add homepage content hub under Appearance.
+ * Register backend menus for homepage section editing.
  */
 function mantix_register_homepage_hub() {
-	add_theme_page(
-		__( 'Mantix Homepage Content', 'mantix' ),
-		__( 'Mantix Homepage Content', 'mantix' ),
+	add_menu_page(
+		__( 'Mantix Content', 'mantix' ),
+		__( 'Mantix Content', 'mantix' ),
+		'edit_theme_options',
+		'mantix-homepage-content',
+		'mantix_render_homepage_hub',
+		'dashicons-welcome-widgets-menus',
+		26
+	);
+
+	add_submenu_page(
+		'mantix-homepage-content',
+		__( 'Overview', 'mantix' ),
+		__( 'Overview', 'mantix' ),
 		'edit_theme_options',
 		'mantix-homepage-content',
 		'mantix_render_homepage_hub'
 	);
+
+	add_submenu_page(
+		'mantix-homepage-content',
+		__( 'Brand, Hero & CTA', 'mantix' ),
+		__( 'Brand, Hero & CTA', 'mantix' ),
+		'edit_theme_options',
+		'mantix-content-customizer',
+		'mantix_redirect_to_customizer'
+	);
+
+	add_submenu_page(
+		'mantix-homepage-content',
+		__( 'Features', 'mantix' ),
+		__( 'Features', 'mantix' ),
+		'edit_theme_options',
+		'mantix-content-features',
+		'mantix_redirect_to_features'
+	);
+
+	add_submenu_page(
+		'mantix-homepage-content',
+		__( 'Testimonials', 'mantix' ),
+		__( 'Testimonials', 'mantix' ),
+		'edit_theme_options',
+		'mantix-content-testimonials',
+		'mantix_redirect_to_testimonials'
+	);
+
+	add_submenu_page(
+		'mantix-homepage-content',
+		__( 'Pricing Plans', 'mantix' ),
+		__( 'Pricing Plans', 'mantix' ),
+		'edit_theme_options',
+		'mantix-content-pricing',
+		'mantix_redirect_to_pricing'
+	);
+
+	add_submenu_page(
+		'mantix-homepage-content',
+		__( 'FAQ', 'mantix' ),
+		__( 'FAQ', 'mantix' ),
+		'edit_theme_options',
+		'mantix-content-faq',
+		'mantix_redirect_to_faq'
+	);
 }
 add_action( 'admin_menu', 'mantix_register_homepage_hub' );
+
+/**
+ * Redirect content submenu to customizer panel.
+ */
+function mantix_redirect_to_customizer() {
+	wp_safe_redirect( admin_url( 'customize.php?autofocus[panel]=mantix_panel' ) );
+	exit;
+}
+
+/**
+ * Redirect content submenu to features list.
+ */
+function mantix_redirect_to_features() {
+	wp_safe_redirect( admin_url( 'edit.php?post_type=mantix_feature' ) );
+	exit;
+}
+
+/**
+ * Redirect content submenu to testimonials list.
+ */
+function mantix_redirect_to_testimonials() {
+	wp_safe_redirect( admin_url( 'edit.php?post_type=mantix_testimonial' ) );
+	exit;
+}
+
+/**
+ * Redirect content submenu to pricing list.
+ */
+function mantix_redirect_to_pricing() {
+	wp_safe_redirect( admin_url( 'edit.php?post_type=mantix_pricing' ) );
+	exit;
+}
+
+/**
+ * Redirect content submenu to FAQ list.
+ */
+function mantix_redirect_to_faq() {
+	wp_safe_redirect( admin_url( 'edit.php?post_type=mantix_faq' ) );
+	exit;
+}
 
 /**
  * Render homepage hub page.
