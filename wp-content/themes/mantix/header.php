@@ -32,9 +32,16 @@ $secondary_url        = (string) mantix_get_mod( 'mantix_header_secondary_cta_ur
 <?php if ( is_front_page() && $announcement_enabled && '' !== trim( $announcement_text ) ) : ?>
 	<div class="announcement-bar" role="region" aria-label="<?php esc_attr_e( 'Announcement', 'mantix' ); ?>">
 		<div class="site-container announcement-inner">
-			<p><?php echo esc_html( $announcement_text ); ?></p>
-			<?php if ( '' !== trim( $announcement_label ) && '' !== trim( $announcement_url ) ) : ?>
-				<a href="<?php echo esc_url( $announcement_url ); ?>"><?php echo esc_html( $announcement_label ); ?></a>
+			<div class="announcement-main">
+				<p><?php echo esc_html( $announcement_text ); ?></p>
+				<?php if ( '' !== trim( $announcement_label ) && '' !== trim( $announcement_url ) ) : ?>
+					<a href="<?php echo esc_url( $announcement_url ); ?>"><?php echo esc_html( $announcement_label ); ?></a>
+				<?php endif; ?>
+			</div>
+			<?php if ( function_exists( 'mantix_language_switcher' ) ) : ?>
+				<div class="announcement-language">
+					<?php mantix_language_switcher( array( 'class' => 'mantix-language-switcher-announcement' ) ); ?>
+				</div>
 			<?php endif; ?>
 		</div>
 	</div>
@@ -70,9 +77,6 @@ $secondary_url        = (string) mantix_get_mod( 'mantix_header_secondary_cta_ur
 		</nav>
 
 		<div class="header-cta-wrap">
-			<?php if ( function_exists( 'mantix_language_switcher' ) ) : ?>
-				<?php mantix_language_switcher( array( 'class' => 'mantix-language-switcher-header' ) ); ?>
-			<?php endif; ?>
 			<a class="button button-secondary" href="<?php echo esc_url( $secondary_url ); ?>"><?php echo esc_html( $secondary_label ); ?></a>
 			<a class="button button-primary" href="<?php echo esc_url( $primary_url ); ?>"><?php echo esc_html( $primary_label ); ?></a>
 		</div>
