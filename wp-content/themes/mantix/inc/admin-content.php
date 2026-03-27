@@ -26,7 +26,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-screenoptions',
 			'supports'            => array( 'title', 'editor', 'excerpt', 'page-attributes' ),
@@ -47,7 +47,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-format-quote',
 			'supports'            => array( 'title', 'editor', 'page-attributes' ),
@@ -68,7 +68,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-tag',
 			'supports'            => array( 'title', 'editor', 'excerpt', 'page-attributes' ),
@@ -89,7 +89,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-editor-help',
 			'supports'            => array( 'title', 'editor', 'page-attributes' ),
@@ -110,7 +110,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-images-alt2',
 			'supports'            => array( 'title', 'editor', 'page-attributes' ),
@@ -131,7 +131,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-thumbs-up',
 			'supports'            => array( 'title', 'editor', 'excerpt', 'page-attributes' ),
@@ -152,7 +152,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-analytics',
 			'supports'            => array( 'title', 'editor', 'excerpt', 'page-attributes' ),
@@ -173,7 +173,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-chart-area',
 			'supports'            => array( 'title', 'page-attributes' ),
@@ -194,7 +194,7 @@ function mantix_register_content_types() {
 			),
 			'public'              => false,
 			'show_ui'             => true,
-			'show_in_menu'        => true,
+			'show_in_menu'        => false,
 			'show_in_rest'        => true,
 			'menu_icon'           => 'dashicons-share',
 			'supports'            => array( 'title', 'page-attributes' ),
@@ -623,7 +623,7 @@ function mantix_register_homepage_hub() {
 		'mantix_render_homepage_hub'
 	);
 
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Brand, Hero & CTA', 'mantix' ),
 		__( 'Brand, Hero & CTA', 'mantix' ),
@@ -631,8 +631,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-customizer',
 		'mantix_redirect_to_customizer'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Features', 'mantix' ),
 		__( 'Features', 'mantix' ),
@@ -640,8 +639,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-features',
 		'mantix_redirect_to_features'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Showcase', 'mantix' ),
 		__( 'Showcase', 'mantix' ),
@@ -649,8 +647,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-showcase',
 		'mantix_redirect_to_showcase'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Benefits', 'mantix' ),
 		__( 'Benefits', 'mantix' ),
@@ -658,8 +655,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-benefits',
 		'mantix_redirect_to_benefits'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Use Cases', 'mantix' ),
 		__( 'Use Cases', 'mantix' ),
@@ -667,8 +663,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-use-cases',
 		'mantix_redirect_to_use_cases'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Stats', 'mantix' ),
 		__( 'Stats', 'mantix' ),
@@ -676,8 +671,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-stats',
 		'mantix_redirect_to_stats'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Testimonials', 'mantix' ),
 		__( 'Testimonials', 'mantix' ),
@@ -685,8 +679,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-testimonials',
 		'mantix_redirect_to_testimonials'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Pricing Plans', 'mantix' ),
 		__( 'Pricing Plans', 'mantix' ),
@@ -694,8 +687,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-pricing',
 		'mantix_redirect_to_pricing'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'FAQ', 'mantix' ),
 		__( 'FAQ', 'mantix' ),
@@ -703,8 +695,7 @@ function mantix_register_homepage_hub() {
 		'mantix-content-faq',
 		'mantix_redirect_to_faq'
 	);
-
-	add_submenu_page(
+	mantix_register_redirect_submenu_page(
 		'mantix-homepage-content',
 		__( 'Footer Social', 'mantix' ),
 		__( 'Footer Social', 'mantix' ),
@@ -714,6 +705,31 @@ function mantix_register_homepage_hub() {
 	);
 }
 add_action( 'admin_menu', 'mantix_register_homepage_hub' );
+
+/**
+ * Add a submenu page that redirects before output starts.
+ *
+ * @param string $parent_slug Parent menu slug.
+ * @param string $page_title  Page title.
+ * @param string $menu_title  Menu title.
+ * @param string $capability  Required capability.
+ * @param string $menu_slug   Menu slug.
+ * @param string $callback    Redirect callback function.
+ */
+function mantix_register_redirect_submenu_page( $parent_slug, $page_title, $menu_title, $capability, $menu_slug, $callback ) {
+	$hook = add_submenu_page(
+		$parent_slug,
+		$page_title,
+		$menu_title,
+		$capability,
+		$menu_slug,
+		'__return_empty_string'
+	);
+
+	if ( $hook && is_callable( $callback ) ) {
+		add_action( 'load-' . $hook, $callback );
+	}
+}
 
 /**
  * Redirect content submenu to customizer panel.
@@ -826,6 +842,248 @@ function mantix_render_homepage_hub() {
 	</div>
 	<?php
 }
+
+/**
+ * Check whether a content type already has any posts.
+ *
+ * @param string $post_type Post type slug.
+ * @return bool
+ */
+function mantix_has_any_content_posts( $post_type ) {
+	$count = wp_count_posts( $post_type );
+
+	if ( ! is_object( $count ) ) {
+		return false;
+	}
+
+	$total = 0;
+
+	foreach ( (array) $count as $status_count ) {
+		$total += (int) $status_count;
+	}
+
+	return $total > 0;
+}
+
+/**
+ * Seed current visible section content into backend post types (one-time).
+ */
+function mantix_seed_current_content_to_backend() {
+	$seeded_types = get_option( 'mantix_seeded_content_types', array() );
+
+	if ( ! is_array( $seeded_types ) ) {
+		$seeded_types = array();
+	}
+
+	$post_types = array(
+		'mantix_feature',
+		'mantix_showcase',
+		'mantix_benefit',
+		'mantix_use_case',
+		'mantix_stat',
+		'mantix_testimonial',
+		'mantix_pricing',
+		'mantix_faq',
+		'mantix_social_link',
+	);
+
+	foreach ( $post_types as $post_type ) {
+		if ( in_array( $post_type, $seeded_types, true ) ) {
+			continue;
+		}
+
+		if ( mantix_has_any_content_posts( $post_type ) ) {
+			$seeded_types[] = $post_type;
+			continue;
+		}
+
+		if ( 'mantix_feature' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_features_json' );
+
+			foreach ( $items as $index => $item ) {
+				$post_id = wp_insert_post(
+					array(
+						'post_type'    => 'mantix_feature',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['title'] ) ? sanitize_text_field( (string) $item['title'] ) : '',
+						'post_excerpt' => isset( $item['description'] ) ? sanitize_text_field( (string) $item['description'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					update_post_meta( $post_id, '_mantix_feature_icon', isset( $item['icon'] ) ? sanitize_key( (string) $item['icon'] ) : 'dashboard' );
+				}
+			}
+		}
+
+		if ( 'mantix_showcase' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_showcase_json' );
+
+			foreach ( $items as $index => $item ) {
+				$post_id = wp_insert_post(
+					array(
+						'post_type'    => 'mantix_showcase',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['title'] ) ? sanitize_text_field( (string) $item['title'] ) : '',
+						'post_content' => isset( $item['description'] ) ? sanitize_textarea_field( (string) $item['description'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					$bullets = isset( $item['bullets'] ) && is_array( $item['bullets'] ) ? $item['bullets'] : array();
+					$bullets = array_values( array_filter( array_map( 'sanitize_text_field', array_map( 'strval', $bullets ) ) ) );
+
+					update_post_meta( $post_id, '_mantix_showcase_tag', isset( $item['tag'] ) ? sanitize_text_field( (string) $item['tag'] ) : '' );
+					update_post_meta( $post_id, '_mantix_showcase_bullets', implode( "\n", $bullets ) );
+				}
+			}
+		}
+
+		if ( 'mantix_benefit' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_benefits_json' );
+
+			foreach ( $items as $index => $item ) {
+				wp_insert_post(
+					array(
+						'post_type'    => 'mantix_benefit',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['title'] ) ? sanitize_text_field( (string) $item['title'] ) : '',
+						'post_excerpt' => isset( $item['description'] ) ? sanitize_text_field( (string) $item['description'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+			}
+		}
+
+		if ( 'mantix_use_case' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_use_cases_json' );
+
+			foreach ( $items as $index => $item ) {
+				wp_insert_post(
+					array(
+						'post_type'    => 'mantix_use_case',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['title'] ) ? sanitize_text_field( (string) $item['title'] ) : '',
+						'post_excerpt' => isset( $item['description'] ) ? sanitize_text_field( (string) $item['description'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+			}
+		}
+
+		if ( 'mantix_stat' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_stats_json' );
+
+			foreach ( $items as $index => $item ) {
+				$post_id = wp_insert_post(
+					array(
+						'post_type'   => 'mantix_stat',
+						'post_status' => 'publish',
+						'post_title'  => isset( $item['label'] ) ? sanitize_text_field( (string) $item['label'] ) : '',
+						'menu_order'  => (int) $index,
+					)
+				);
+
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					update_post_meta( $post_id, '_mantix_stat_value', isset( $item['value'] ) ? absint( $item['value'] ) : 0 );
+					update_post_meta( $post_id, '_mantix_stat_suffix', isset( $item['suffix'] ) ? sanitize_text_field( (string) $item['suffix'] ) : '' );
+				}
+			}
+		}
+
+		if ( 'mantix_testimonial' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_testimonials_json' );
+
+			foreach ( $items as $index => $item ) {
+				$post_id = wp_insert_post(
+					array(
+						'post_type'    => 'mantix_testimonial',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['name'] ) ? sanitize_text_field( (string) $item['name'] ) : '',
+						'post_content' => isset( $item['quote'] ) ? sanitize_textarea_field( (string) $item['quote'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					update_post_meta( $post_id, '_mantix_testimonial_role', isset( $item['role'] ) ? sanitize_text_field( (string) $item['role'] ) : '' );
+					update_post_meta( $post_id, '_mantix_testimonial_company', isset( $item['company'] ) ? sanitize_text_field( (string) $item['company'] ) : '' );
+					update_post_meta( $post_id, '_mantix_testimonial_rating', isset( $item['rating'] ) ? absint( $item['rating'] ) : 5 );
+				}
+			}
+		}
+
+		if ( 'mantix_pricing' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_pricing_json' );
+
+			foreach ( $items as $index => $item ) {
+				$post_id = wp_insert_post(
+					array(
+						'post_type'    => 'mantix_pricing',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['name'] ) ? sanitize_text_field( (string) $item['name'] ) : '',
+						'post_excerpt' => isset( $item['description'] ) ? sanitize_text_field( (string) $item['description'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					$features = isset( $item['features'] ) && is_array( $item['features'] ) ? $item['features'] : array();
+					$features = array_values( array_filter( array_map( 'sanitize_text_field', array_map( 'strval', $features ) ) ) );
+
+					update_post_meta( $post_id, '_mantix_pricing_price', isset( $item['price'] ) ? sanitize_text_field( (string) $item['price'] ) : '' );
+					update_post_meta( $post_id, '_mantix_pricing_period', isset( $item['period'] ) ? sanitize_text_field( (string) $item['period'] ) : '' );
+					update_post_meta( $post_id, '_mantix_pricing_button_label', isset( $item['button'] ) ? sanitize_text_field( (string) $item['button'] ) : '' );
+					update_post_meta( $post_id, '_mantix_pricing_button_url', isset( $item['url'] ) ? esc_url_raw( (string) $item['url'] ) : '' );
+					update_post_meta( $post_id, '_mantix_pricing_features', implode( "\n", $features ) );
+					update_post_meta( $post_id, '_mantix_pricing_popular', ! empty( $item['popular'] ) ? '1' : '0' );
+				}
+			}
+		}
+
+		if ( 'mantix_faq' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_faq_json' );
+
+			foreach ( $items as $index => $item ) {
+				wp_insert_post(
+					array(
+						'post_type'    => 'mantix_faq',
+						'post_status'  => 'publish',
+						'post_title'   => isset( $item['question'] ) ? sanitize_text_field( (string) $item['question'] ) : '',
+						'post_content' => isset( $item['answer'] ) ? sanitize_textarea_field( (string) $item['answer'] ) : '',
+						'menu_order'   => (int) $index,
+					)
+				);
+			}
+		}
+
+		if ( 'mantix_social_link' === $post_type ) {
+			$items = mantix_get_json_mod( 'mantix_social_json' );
+
+			foreach ( $items as $index => $item ) {
+				$post_id = wp_insert_post(
+					array(
+						'post_type'   => 'mantix_social_link',
+						'post_status' => 'publish',
+						'post_title'  => isset( $item['label'] ) ? sanitize_text_field( (string) $item['label'] ) : '',
+						'menu_order'  => (int) $index,
+					)
+				);
+
+				if ( $post_id && ! is_wp_error( $post_id ) ) {
+					update_post_meta( $post_id, '_mantix_social_url', isset( $item['url'] ) ? esc_url_raw( (string) $item['url'] ) : '' );
+				}
+			}
+		}
+
+		$seeded_types[] = $post_type;
+	}
+
+	update_option( 'mantix_seeded_content_types', array_values( array_unique( $seeded_types ) ), false );
+}
+add_action( 'init', 'mantix_seed_current_content_to_backend', 40 );
 
 /**
  * Return published posts for a landing content type.
