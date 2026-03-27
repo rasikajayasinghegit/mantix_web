@@ -29,14 +29,6 @@ $secondary_url        = (string) mantix_get_mod( 'mantix_header_secondary_cta_ur
 <?php wp_body_open(); ?>
 <a class="skip-link" href="#content"><?php esc_html_e( 'Skip to content', 'mantix' ); ?></a>
 
-<?php if ( function_exists( 'mantix_language_switcher' ) ) : ?>
-	<div class="mantix-top-bar" role="region" aria-label="<?php esc_attr_e( 'Language selector', 'mantix' ); ?>">
-		<div class="site-container mantix-top-bar-inner">
-			<?php mantix_language_switcher( array( 'class' => 'mantix-language-switcher-top' ) ); ?>
-		</div>
-	</div>
-<?php endif; ?>
-
 <?php if ( is_front_page() && $announcement_enabled && '' !== trim( $announcement_text ) ) : ?>
 	<div class="announcement-bar" role="region" aria-label="<?php esc_attr_e( 'Announcement', 'mantix' ); ?>">
 		<div class="site-container announcement-inner">
@@ -78,6 +70,9 @@ $secondary_url        = (string) mantix_get_mod( 'mantix_header_secondary_cta_ur
 		</nav>
 
 		<div class="header-cta-wrap">
+			<?php if ( function_exists( 'mantix_language_switcher' ) ) : ?>
+				<?php mantix_language_switcher( array( 'class' => 'mantix-language-switcher-header' ) ); ?>
+			<?php endif; ?>
 			<a class="button button-secondary" href="<?php echo esc_url( $secondary_url ); ?>"><?php echo esc_html( $secondary_label ); ?></a>
 			<a class="button button-primary" href="<?php echo esc_url( $primary_url ); ?>"><?php echo esc_html( $primary_label ); ?></a>
 		</div>

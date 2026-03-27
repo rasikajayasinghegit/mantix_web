@@ -372,6 +372,17 @@ ul {
   gap: 0.6rem;
 }
 
+.header-cta-wrap .mantix-language-switcher {
+  position: relative;
+  z-index: 220;
+}
+
+.header-cta-wrap .mantix-lang-dropdown summary {
+  border-radius: 12px;
+  min-height: 44px;
+  padding: 0.76rem 0.84rem;
+}
+
 .menu-toggle {
   display: none;
   border: 0;
